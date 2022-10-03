@@ -1,0 +1,14 @@
+CC = g++
+CFLAGS = -g -std=c++14 
+
+all: makeapp main clean
+
+
+makeapp: main.cpp Data.cpp EigenFaces.cpp Image.cpp Linear.cpp Matrix.cpp PCA.cpp Report.cpp Statistics.cpp 
+	$(CC) main.cpp Data.cpp EigenFaces.cpp Image.cpp Linear.cpp Matrix.cpp PCA.cpp Report.cpp Statistics.cpp -o main.app $(CFLAGS)
+
+main:
+	./main.app 10 5 1 1 20 5 1 2 0 0.3
+
+clean:
+	rm -rf *.app
